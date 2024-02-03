@@ -6,7 +6,6 @@ import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.9.3/contr
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.9.3/contracts/security/ReentrancyGuard.sol";
 
 contract VestingLiquidityHedgey is Ownable, ReentrancyGuard {
-    address public receiverWallet;
     address public poolAddress;
     IERC20 public wrappedToken;
     
@@ -17,14 +16,12 @@ contract VestingLiquidityHedgey is Ownable, ReentrancyGuard {
     event ContractApproved(address indexed sender, uint256 amount);
     event TokensWithdrawn(address indexed to, uint256 amount);
 
-    constructor(address _receiverWallet, address _poolAddress, address _wrappedToken) {
-        require(_receiverWallet != address(0), "Invalid receiver wallet address");
+    constructor(address _poolAddress, address _wETH) {
         require(_poolAddress != address(0), "Invalid pool address");
-        require(_wrappedToken != address(0), "Invalid wrapped token address");
+        require(_wETH != address(0), "Invalid wrapped token address");
 
-        receiverWallet = _receiverWallet;
         poolAddress = _poolAddress;
-        wrappedToken = IERC20(_wrappedToken);
+        wrappedToken = IERC20(_wETH);
         
         // Initialize the block counter
         blockCounter = block.number;
@@ -40,14 +37,13 @@ contract VestingLiquidityHedgey is Ownable, ReentrancyGuard {
         // Transfer tokens from sender to this contract
         require(wrappedToken.transferFrom(msg.sender, address(this), amount), "Transfer failed");
 
+        // Transfer all deposited tokens to the pool immediately
+        executeTransferToPool();
+
         // Optionally, you can perform additional logic or emit events here
         
-        // Check if 100 blocks have passed and execute transfer to pool
-        if (block.number - blockCounter >= transferInterval) {
-            executeTransferToPool();
-            // Reset the block counter
-            blockCounter = block.number;
-        }
+        // Reset the block counter
+        blockCounter = block.number;
     }
 
     // Approve the contract to spend a certain amount of wrapped tokens
@@ -79,7 +75,7 @@ contract VestingLiquidityHedgey is Ownable, ReentrancyGuard {
     
     // Internal function to execute the transfer to the pool
     function executeTransferToPool() internal {
-        // Transfer tokens from this contract to the pool address
+        // Transfer total tokens from this contract to the pool address
         uint256 contractBalance = wrappedToken.balanceOf(address(this));
         if (contractBalance > 0) {
             require(wrappedToken.transfer(poolAddress, contractBalance), "Transfer to pool failed");

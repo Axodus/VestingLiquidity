@@ -9,17 +9,12 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "_receiverWallet",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
 						"name": "_poolAddress",
 						"type": "address"
 					},
 					{
 						"internalType": "address",
-						"name": "_wrappedToken",
+						"name": "_wETH",
 						"type": "address"
 					}
 				],
@@ -169,19 +164,6 @@
 			},
 			{
 				"inputs": [],
-				"name": "receiverWallet",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
 				"name": "renounceOwnership",
 				"outputs": [],
 				"stateMutability": "nonpayable",
@@ -283,11 +265,11 @@
 	},
 	"sources": {
 		"contract/VestingLiquidityHedgey.sol": {
-			"keccak256": "0xe6fdee3813517513c51eb8a67bce5d06344b3f03697cb56d96e17e14cfe5a233",
+			"keccak256": "0x1ce131419154df937bcedfb7f1457837ec38234addc1594cd3d860f6f5584fc2",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://a09155be38a74ef9a97984fdbbf2c69b40e579de1485612f2c05a8f2bef5c67a",
-				"dweb:/ipfs/QmcqzCzE2tR9YWkkktQCmzcMdEzhSqVBkrytzqG9szC5hV"
+				"bzz-raw://0a175885bd5f4bd47c8f1d883bdb52098687fc52c00bf6c2bdbb694f4cda742c",
+				"dweb:/ipfs/QmU4XncfT4jFWrq8UVoYLwRUPJPFyjZdoXaso6F5i9kbVf"
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.9.3/contracts/access/Ownable.sol": {

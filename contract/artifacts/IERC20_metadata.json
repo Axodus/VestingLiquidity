@@ -245,10 +245,10 @@
 	},
 	"sources": {
 		"contract/VestingLiquidityHedgey_flattened.sol": {
-			"keccak256": "0x88a73b61dc17bf7a88c745481c88b1219110088555dd5fb3e758604c533fd401",
+			"keccak256": "0x29494a1554ba773a0ecb0668e0c9c3fb5f0ef728b7d91446e62b01549d4d2156",
 			"urls": [
-				"bzz-raw://9a10fb57d75921289cd7176b1ed96d35d2f5f0a552239f430679aef82c99fc86",
-				"dweb:/ipfs/QmQF8kPwTAEb3xBcMTdCtYWC6TgT4NS9jtbHam2LpKRAHZ"
+				"bzz-raw://5672cfea36d973ddeeb71bc282f9d83cb33aeeab16c13a2a444d88092e390607",
+				"dweb:/ipfs/QmRTDoupvuBdqcVZyGLRbeb8o194ZRWUf9tZhUTWJkjNBr"
 			]
 		}
 	},
