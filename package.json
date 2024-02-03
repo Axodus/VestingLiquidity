@@ -1,5 +1,5 @@
 {
-    "name": "@axodus/VestingPoolInteractor",
+    "name": "@axodus/vesting-pool-interactor",
     "version": "1.0.0",
     "description": "Axodus Pool V2 Interactor",
     "main": "interactor.js",
