@@ -93,17 +93,17 @@
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": false,
+			"enabled": true,
 			"runs": 200
 		},
 		"remappings": []
 	},
 	"sources": {
 		"contract/VestingLiquidityHedgey_flattened.sol": {
-			"keccak256": "0x29494a1554ba773a0ecb0668e0c9c3fb5f0ef728b7d91446e62b01549d4d2156",
+			"keccak256": "0x1a046e1d3939f099c14505045120c76bc1e56aa0698217457ab59f696b69d3bb",
 			"urls": [
-				"bzz-raw://5672cfea36d973ddeeb71bc282f9d83cb33aeeab16c13a2a444d88092e390607",
-				"dweb:/ipfs/QmRTDoupvuBdqcVZyGLRbeb8o194ZRWUf9tZhUTWJkjNBr"
+				"bzz-raw://ba9a4e4f44026c76f014d3d1f15947156cfe7809c563caa3403bf9242d8c0f78",
+				"dweb:/ipfs/QmfLZMND3zNdDSnnNEv8ULsteBjDepGArMgpPeFc6jUeKf"
 			]
 		}
 	},
