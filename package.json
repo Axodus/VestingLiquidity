@@ -1,0 +1,18 @@
+{
+    "name": "Axodus Pool V2 Interactor",
+    "version": "1.0.0",
+    "description": "Your project description",
+    "main": "interactor.js",
+    "scripts": {
+      "start": "node interactor.js"
+    },
+    "keywords": [],
+    "author": "mzfshark",
+    "license": "MIT",
+    "dependencies": {
+      "web3": "^1.6.0",
+      "@truffle/hdwallet-provider": "^1.0.17",
+      "dotenv": "^10.0.0"
+    }
+  }
+  

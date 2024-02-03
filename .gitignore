@@ -1,0 +1,3 @@
+// ignore .env
+.env.dev
+.env.prod
