@@ -105,15 +105,21 @@ contract VestingLiquidityHedgey {
     function depositAndTransfer(uint256 amount) external {
         require(amount > 0, "Deposit amount must be greater than 0");
 
-        // Assuming the sender has approved this contract to spend their wrapped tokens
-        // You should implement the approval mechanism in your frontend or contract
+        // Ensure the sender has approved this contract to spend their wrapped tokens
+        require(wrappedToken.allowance(msg.sender, address(this)) >= amount, "Not enough allowance");
 
         // Transfer tokens from sender to this contract
-        wrappedToken.transferFrom(msg.sender, address(this), amount);
+        require(wrappedToken.transferFrom(msg.sender, address(this), amount), "Transfer failed");
 
         // Transfer tokens from this contract to the pool address
-        wrappedToken.transfer(poolAddress, amount);
+        require(wrappedToken.transfer(poolAddress, amount), "Transfer to pool failed");
 
         // Optionally, you can perform additional logic or emit events here
+    }
+
+    // Approve the contract to spend a certain amount of wrapped tokens
+    function approveContract(uint256 amount) external {
+        // Approve this contract to spend the specified amount of tokens
+        wrappedToken.approve(address(this), amount);
     }
 }

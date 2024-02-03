@@ -34,6 +34,19 @@
 						"type": "uint256"
 					}
 				],
+				"name": "approveContract",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
 				"name": "depositAndTransfer",
 				"outputs": [],
 				"stateMutability": "nonpayable",
@@ -92,7 +105,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contract/VestingLiquidityHedgey_flattened.sol": "VestingLiquidityHedgey"
+			"contract/VestingLiquidityHedgey.sol": "VestingLiquidityHedgey"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -106,11 +119,20 @@
 		"remappings": []
 	},
 	"sources": {
-		"contract/VestingLiquidityHedgey_flattened.sol": {
-			"keccak256": "0x60a3a30be0b00b00402f7b94721413914eab11f7494b9a776fe9951eebcde7ec",
+		"contract/VestingLiquidityHedgey.sol": {
+			"keccak256": "0x855eafc5b8d4d13fc4d367f1a69aa3865908fddb259fd607ac9318f57fb196b2",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://2e5110f1828cb6a16ecf83bc69d13ed7fb9fbd976526b1e553a379c3d5b60f64",
-				"dweb:/ipfs/QmVSPrZ3bLHq5U5jxYeL1d8gzvhqqfY4dc4rbctHNNfgrr"
+				"bzz-raw://aec0194b92fac1b0b6513c8f1b66ddcb53aa29b54956cae7f2486cac9c799100",
+				"dweb:/ipfs/QmSKoHFUyHXpSP7zBdqNzhhLBkutZGLZL8sbxcS5PyLgFQ"
+			]
+		},
+		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.9.3/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0x287b55befed2961a7eabd7d7b1b2839cbca8a5b80ef8dcbb25ed3d4c2002c305",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://bd39944e8fc06be6dbe2dd1d8449b5336e23c6a7ba3e8e9ae5ae0f37f35283f5",
+				"dweb:/ipfs/QmPV3FGYjVwvKSgAXKUN3r9T9GwniZz83CxBpM7vyj2G53"
 			]
 		}
 	},
