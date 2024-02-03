@@ -1,7 +1,7 @@
 {
-    "name": "Axodus Pool V2 Interactor",
+    "name": "@axodus/VestingPoolInteractor",
     "version": "1.0.0",
-    "description": "Your project description",
+    "description": "Axodus Pool V2 Interactor",
     "main": "interactor.js",
     "scripts": {
       "start": "node interactor.js"
@@ -13,6 +13,10 @@
       "web3": "^1.6.0",
       "@truffle/hdwallet-provider": "^1.0.17",
       "dotenv": "^10.0.0"
-    }
+    },
+    "engines": {
+    "node": "18.x",
+    "yarn": ">=1.22"
   }
+}
   
