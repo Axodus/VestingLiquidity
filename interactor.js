@@ -1,5 +1,5 @@
 const Web3 = require('web3');
-const { abi, evm } = require('./YourContract.json');
+const { abi, evm } = require('./LiquidityInteractor.json');
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 const dotenv = require('dotenv');
 
