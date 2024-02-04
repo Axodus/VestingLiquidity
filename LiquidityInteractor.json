@@ -325,6 +325,5 @@
             "stateMutability": "view",
             "type": "function"
         }
-    ],
-    // other contract information
-  }
+    ]
+}
