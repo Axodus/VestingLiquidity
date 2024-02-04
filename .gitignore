@@ -1,5 +1,8 @@
-// ignore .env
+// ignore .envs
 .env.dev
 .env.prod
+.env
 
-node_modules
+/node_modules
+package-lock.json
+yarn.lock
