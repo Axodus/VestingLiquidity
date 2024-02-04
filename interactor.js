@@ -5,7 +5,8 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 
-const provider = new HDWalletProvider(process.env.MNEMONIC, `https://mainnet.infura.io/v3/${process.env.INFURA_API_KEY}`);
+//const provider = new HDWalletProvider(process.env.MNEMONIC, `https://mainnet.infura.io/v3/${process.env.INFURA_API_KEY}`);
+const provider = new HDWalletProvider(process.env.MNEMONIC, `https://api.harmony.one`);
 const web3 = new Web3(provider);
 
 const contractAddress = process.env.CONTRACT_ADDRESS;
