@@ -15,7 +15,7 @@ npm install
 Adjust the .env file with your specific configuration:
 Environment Variables: Create a .env file in the project directory with the following variables:
 ```
-MNEMONIC=your_mnemonic_phrase // Your wallet's mnemonic phrase.
+WETH_TOKEN_ADDRESS=defined_weth_address
 INFURA_API_KEY=your_infura_api_key //  Your Infura API key.
 CONTRACT_ADDRESS=your_contract_address // The address of the target smart contract.
 OWNER_ADDRESS=your_owner_address // The owner's wallet address.
