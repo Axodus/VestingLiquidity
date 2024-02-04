@@ -5,13 +5,11 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 
-//const provider = new HDWalletProvider(process.env.MNEMONIC, `https://mainnet.infura.io/v3/${process.env.INFURA_API_KEY}`);
-const provider = new HDWalletProvider(process.env.MNEMONIC, `https://api.harmony.one`);
+const provider = new HDWalletProvider(process.env.PRIVATE_KEY, `https://api.harmony.one`);
 const web3 = new Web3(provider);
 
 const contractAddress = process.env.CONTRACT_ADDRESS;
 const ownerAddress = process.env.OWNER_ADDRESS;
-const privateKey = process.env.PRIVATE_KEY;
 
 const contract = new web3.eth.Contract(abi, contractAddress);
 
@@ -48,4 +46,3 @@ setInterval(main, 60 * 60 * 1000); // 60 minutes * 60 seconds/minute * 1000 mill
 
 // Call main immediately to run it at the start
 main();
-
