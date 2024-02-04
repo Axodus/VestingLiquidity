@@ -1,5 +1,6 @@
 const Web3 = require('web3');
-const { abi } = require('./LiquidityInteractor.json');
+const { abi } = require('./LiquidityInteractor.json'); // Replace with your contract ABI
+const wETHAbi = require('./_wETH.json'); // Replace with the actual path to _wETH.json
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 const dotenv = require('dotenv');
 
@@ -10,8 +11,11 @@ const web3 = new Web3(provider);
 
 const contractAddress = process.env.CONTRACT_ADDRESS;
 const ownerAddress = process.env.OWNER_ADDRESS;
+const wethTokenAddress = process.env.WETH_TOKEN_ADDRESS; // Replace with the actual WETH token address
 
 const contract = new web3.eth.Contract(abi, contractAddress);
+const wETHContract = new web3.eth.Contract(wETHAbi, wethTokenAddress);
+
 
 async function sendTokensToContract(amount) {
     const allowance = await contract.methods.allowance(ownerAddress, contractAddress).call();
