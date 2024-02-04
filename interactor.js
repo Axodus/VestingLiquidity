@@ -18,9 +18,21 @@ const wETHContract = new web3.eth.Contract(wETHAbi, wethTokenAddress);
 
 
 async function sendTokensToContract(amount) {
+    const wETHAllowance = await wETHContract.methods.allowance(ownerAddress, contractAddress).call();
+    
+    if (wETHAllowance < amount) {
+        const approveTx = wETHContract.methods.approve(contractAddress, amount);
+        const approveReceipt = await sendTransaction(ownerAddress, approveTx);
+    
+        console.log('Approval Transaction Receipt:', approveReceipt.transactionHash);
+        if (approveReceipt.status) {
+            console.log('Approval was successful.');
+        } else {
+            console.log('Approval failed.');
+        }
+    }
+
     const allowance = await contract.methods.allowance(ownerAddress, contractAddress).call();
-     // Use the wETHContract instance to interact with the WETH token contract
-     const allowance = await wETHContract.methods.allowance(ownerAddress, contractAddress).call();
 
     if (allowance < amount) {
         const approveTx = contract.methods.approve(contractAddress, amount);
@@ -44,6 +56,7 @@ async function sendTokensToContract(amount) {
         console.log('Transfer failed.');
     }
 }
+
 
 async function sendTransaction(from, transaction) {
     const gasPrice = await web3.eth.getGasPrice();
